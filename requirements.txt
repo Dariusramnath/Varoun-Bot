@@ -1,4 +1,5 @@
 aiohttp @ file:///home/runner/.cache/pypoetry/artifacts/3f/d0/77/5f304dab3ab4e78570d56d9fcbefa93052e963223339e45ef0e133bbfe/aiohttp-3.7.4.post0-cp38-cp38-manylinux2014_x86_64.whl
+aiosignal==1.2.0
 async-timeout @ file:///home/runner/.cache/pypoetry/artifacts/c7/da/71/c4409238928a2fb820a2b5ca6e78e62fa57ccdb0be6ca2d70293ef41d1/async_timeout-3.0.1-py3-none-any.whl
 attrs @ file:///home/runner/.cache/pypoetry/artifacts/ce/c5/12/8fd5b4b1dc80042f7e01fbe2ff237c1b919916077e31ba1af981b6e970/attrs-21.4.0-py2.py3-none-any.whl
 backports.entry-points-selectable==1.1.1
@@ -20,6 +21,7 @@ distlib==0.3.3
 docopt==0.6.2
 filelock==3.3.2
 Flask @ file:///home/runner/.cache/pypoetry/artifacts/f0/c2/f0/b828484cff12299869de202496fe49c590b09691fafc275e52903b4ea9/Flask-2.1.1-py3-none-any.whl
+frozenlist==1.3.0
 future==0.18.2
 html5lib==1.1
 idna==3.3
