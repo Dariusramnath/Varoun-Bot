@@ -35,7 +35,7 @@ lockfile==0.12.2
 MarkupSafe @ file:///home/runner/.cache/pypoetry/artifacts/88/0a/95/ac2c115c8bb7dfdc50b353cd4080e4d749fd35e75c623094e3f6d5ef9c/MarkupSafe-2.1.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 msgpack==1.0.2
 multidict @ file:///home/runner/.cache/pypoetry/artifacts/d4/f2/19/e92b8d780e4d481ca2e4dc917e50941c793d8b8481ffe37410dab9075a/multidict-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-numpy @ file:///home/runner/.cache/pypoetry/artifacts/0a/f1/63/4e86e206dd78b5ffa1d0b33299c8275c3e1a2411fac9d63320ce69de5f/numpy-1.22.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+numpy @ file:///home/runner/.cache/pypoetry/artifacts/d8/34/ee/e457b49937c93d20ad0b42aab9eb40ef0806a9109a83bf3c9926a86962/numpy-1.22.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 packaging==20.9
 parso==0.5.2
 pastel==0.2.1
