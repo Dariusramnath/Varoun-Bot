@@ -1,13 +1,13 @@
-aiohttp @ file:///home/runner/.cache/pypoetry/artifacts/3f/d0/77/5f304dab3ab4e78570d56d9fcbefa93052e963223339e45ef0e133bbfe/aiohttp-3.7.4.post0-cp38-cp38-manylinux2014_x86_64.whl
+aiohttp==3.7.4
 aiosignal==1.2.0
-async-timeout @ file:///home/runner/.cache/pypoetry/artifacts/c7/da/71/c4409238928a2fb820a2b5ca6e78e62fa57ccdb0be6ca2d70293ef41d1/async_timeout-3.0.1-py3-none-any.whl
+async-timeout==3.0.1
 attrs @ file:///home/runner/.cache/pypoetry/artifacts/ce/c5/12/8fd5b4b1dc80042f7e01fbe2ff237c1b919916077e31ba1af981b6e970/attrs-21.4.0-py2.py3-none-any.whl
 backports.entry-points-selectable==1.1.1
 CacheControl==0.12.10
 cachy==0.3.0
 certifi==2021.10.8
 cffi==1.15.0
-chardet @ file:///home/runner/.cache/pypoetry/artifacts/d3/11/55/48142abd2f6448e7241f6cbcabf421ef65ac5db5a4887be11463b378ba/chardet-4.0.0-py2.py3-none-any.whl
+chardet==3.0.4
 charset-normalizer==2.0.7
 cleo==0.8.1
 click @ file:///home/runner/.cache/pypoetry/artifacts/b5/a4/bc/6596cda9eddfd8107806d92d16003e6b23c51022a0e86becae64faf187/click-8.1.2-py3-none-any.whl
