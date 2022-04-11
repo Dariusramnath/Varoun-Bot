@@ -8,7 +8,7 @@ bot = commands.Bot(command_prefix='!')
 
 guywithsigns = ["|￣￣￣￣￣￣￣￣￣￣￣￣￣|",
        "       we have signs command",
-"|＿＿＿＿＿＿＿＿＿＿＿＿＿ |",
+"|＿＿＿＿＿＿＿＿＿＿＿＿＿|",
                     "                   \ (•◡•) /",
                       "                      \      /",
                         "                        ---",
