@@ -4,36 +4,46 @@ import discord
 import os
 
 client = discord.Client()
-bot = commands.Bot(command_prefix='$')
+bot = commands.Bot(command_prefix='!')
 
+guywithsigns = ["|￣￣￣￣￣￣￣￣￣￣￣￣￣|",
+       "       we have signs command",
+"|＿＿＿＿＿＿＿＿＿＿＿＿＿ |",
+                    "                   \ (•◡•) /",
+                      "                      \      /",
+                        "                        ---",
+                        "                        |   |"]
 
-@bot.event
-async def on_ready():
-    print(f'{bot.user} has arrived!')
+@bot.command()
+async def load(ctx, extension):
+  bot.load_extension(f'cogs.{extension}')
 
+@bot.command()
+async def unload(ctx, extension):
+  bot.unload_extension(f'cogs.{extension}')
+
+for filename in os.listdir('./cogs'):
+  if filename.endswith('.py'):
+    bot.load_extension(f'cogs.{filename[:-3]}')
+
+@bot.command()
+async def varoun(ctx, arg):
+    token_id = int(arg)
+  
+    if token_id >= 0 and token_id < 10000:
+      base_url = f'https://frames-app-theta.vercel.app/api/p/kiwami/{str(token_id)}'
+      await ctx.send(base_url)
+    else:
+      await ctx.send('Token ID outside of range')
 
 @bot.event
 async def on_message(message):
-    if message.author == bot.user:
-        return
+	if message.content == "!varoun signs":
+		  await message.channel.send("\n".join(guywithsigns))
 
-    msg = message.content
-
-    msg_parts = msg.split(' ')
-
-    if msg_parts[0] == '!varoun':
-        # number validation
-        try:
-            token_id = int(msg_parts[1])
-        except:
-            await message.channel.send('Invalid Token ID')
-
-        if token_id >= 0 and token_id < 10000:
-            base_url = f'https://frames-app-theta.vercel.app/api/p/kiwami/{str(token_id)}'
-            await message.channel.send(base_url)
-        else:
-            await message.channel.send('Token ID outside of range')
+	await bot.process_commands(message)
 
 
+    
 keep_alive()
 bot.run(os.getenv('TOKEN'))
