@@ -4,7 +4,14 @@ import discord
 import os
 
 client = discord.Client()
-bot = commands.Bot(command_prefix='!')
+bot = commands.Bot(command_prefix='!varoun')
+
+def is_int(num):
+  try:
+    int(num)
+    return True
+  except:
+    return False
 
 guywithsigns = ["|￣￣￣￣￣￣￣￣￣￣￣￣￣|",
        "       we have signs command",
@@ -14,34 +21,43 @@ guywithsigns = ["|￣￣￣￣￣￣￣￣￣￣￣￣￣|",
                         "                        ---",
                         "                        |   |"]
 
-@bot.command()
-async def load(ctx, extension):
-  bot.load_extension(f'cogs.{extension}')
+@bot.event 
+async def on_ready():  # When the bot is ready
+    print("I'm in")
+    print(bot.user)
 
-@bot.command()
-async def unload(ctx, extension):
-  bot.unload_extension(f'cogs.{extension}')
-
-for filename in os.listdir('./cogs'):
-  if filename.endswith('.py'):
-    bot.load_extension(f'cogs.{filename[:-3]}')
-
-@bot.command()
-async def varoun(ctx, arg):
-    token_id = int(arg)
-  
-    if token_id >= 0 and token_id < 10000:
-      base_url = f'https://frames-app-theta.vercel.app/api/p/kiwami/{str(token_id)}'
-      await ctx.send(base_url)
-    else:
-      await ctx.send('Token ID outside of range')
 
 @bot.event
 async def on_message(message):
-	if message.content == "!varoun signs":
-		  await message.channel.send("\n".join(guywithsigns))
+    if message.author == bot.user:
+        return
 
-	await bot.process_commands(message)
+    msg = message.content
+
+    msg_parts = msg.split(' ')
+
+#Code for masked kiwami images
+    if msg_parts[0] == '!varoun':
+      if is_int(msg_parts[1]):
+        token_id = int(msg_parts[1])
+        # number validation
+        if token_id >= 0 and token_id < 10000:
+          base_url_logo = f'https://frames-app-theta.vercel.app/api/p/kiwami/{str(token_id)}'
+          await message.channel.send(base_url_logo)
+        else:
+          await message.channel.send('Token ID outside of range')
+#Code for normal kiwami images
+      elif msg_parts[1] == 'kiwami':
+        if is_int(msg_parts[2]):
+          token_id = int(msg_parts[2])
+          if token_id >= 0 and token_id < 10000:
+            base_url_normal = f'https://frames-nft-app.herokuapp.com/api/os/0x701A038aF4Bd0fc9b69A829DdcB2f61185a49568/{str(token_id)}'
+            await message.channel.send(base_url_normal)
+          else:
+            await message.channel.send('Token ID outside of range')
+#Code for sign board
+      elif msg_parts[1] == 'signs':
+        await message.channel.send("\n".join(guywithsigns))
 
 
     
