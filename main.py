@@ -42,17 +42,17 @@ async def on_message(message):
         token_id = int(msg_parts[1])
         # number validation
         if token_id >= 0 and token_id < 10000:
-          base_url_logo = f'https://frames-app-theta.vercel.app/api/p/kiwami/{str(token_id)}'
-          await message.channel.send(base_url_logo)
+          base_url_normal = f'https://frames-nft-app.herokuapp.com/api/os/0x701A038aF4Bd0fc9b69A829DdcB2f61185a49568/{str(token_id)}'
+          await message.channel.send(base_url_normal)
         else:
           await message.channel.send('Token ID outside of range')
 #Code for normal kiwami images
-      elif msg_parts[1] == 'kiwami':
+      elif msg_parts[1] == 'logo':
         if is_int(msg_parts[2]):
           token_id = int(msg_parts[2])
           if token_id >= 0 and token_id < 10000:
-            base_url_normal = f'https://frames-nft-app.herokuapp.com/api/os/0x701A038aF4Bd0fc9b69A829DdcB2f61185a49568/{str(token_id)}'
-            await message.channel.send(base_url_normal)
+            base_url_logo = f'https://frames-app-theta.vercel.app/api/p/kiwami/{str(token_id)}'
+            await message.channel.send(base_url_logo)
           else:
             await message.channel.send('Token ID outside of range')
 #Code for sign board
